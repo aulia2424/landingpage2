@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix | Landing Page UI Design</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo"><img src="logo.png" /></a>
+      <ul class="navigation">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Movies</a></li>
+        <li><a href="#">Tv Series</a></li>
+        <li><a href="#">Genre</a></li>
+      </ul>
+
+      <div class="search">
+        <input type="text" placeholder="Search" />
+        <img src="search.svg" class="sci" />
+      </div>
+    </header>
+
+    <div class="banner">
+      <img src="bg.jpg" class="bg" />
+      <div class="content">
+        <img src="name.png" class="movieTitle" />
+        <h4>
+          <span>2022</span>
+          <span><i>13+</i></span>
+          <span>1h 55min</span>
+          <span>Action</span>
+        </h4>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas perferendis natus, unde labore sit cumque quisquam porro deleniti consectetur ut nam? Eius, rem, commodi aspernatur architecto nulla repellendus quam repellat id
+          qui laborum perspiciatis. Iure vitae quidem perspiciatis consequatur illum.
+        </p>
+
+        <div class="buttons">
+          <a href="#"><img src="play-fill.svg" class="play1" />Play</a>
+          <a href="#"><img src="plus.svg" class="plus" /> My List</a>
+        </div>
+      </div>
+
+      <a class="play" onclick="toggleVideo();"><img src="play.png" />Wach Trailer</a>
+    </div>
+
+    <div class="trailer">
+      <video src="trailer.mp4" controls="true" autoplay="true"></video>
+      <img src="close.png" class="close" onclick="toggleVideo();" />
+    </div>
+
+    <script>
+      function toggleVideo() {
+        const trailer = document.querySelector(".trailer");
+        const video = document.querySelector("video");
+        trailer.classList.toggle("active");
+        video.currentTime = 0;
+        video.pause();
+      }
+    </script>
+  </body>
+</html>
